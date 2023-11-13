@@ -35,6 +35,7 @@ Check the <a href=https://unix.stackexchange.com/questions/28803/how-can-i-reduc
 📥 FOR HELP CONT. @Snowball_Official
 """
 
+    
     HELP_MSG = """
 Available commands:-
 
@@ -50,3 +51,14 @@ Available commands:-
 
 <b>⦿ Developer:</b> <a href="https://t.me/Snowball_Official>SNOWBALL ❄️</a>
 """
+
+    ABOUT_TXT = """<b>╭───────────⍟
+├🤖 ᴍy ɴᴀᴍᴇ : @{}
+├👨‍💻 Pʀᴏɢʀᴀᴍᴇʀ : <a href=https://t.me/Snowball_Official>𝓢𝓝𝓞𝓦𝓑𝓐𝓛𝓛</a>
+├👑 Instagram : <a href=https://www.instagram.com/ritesh6_>C-Insta</a> 
+├☃️ ꜰᴏᴜɴᴅᴇʀ ᴏꜰ : <a href=https://t.me/+HzGpLAZXTxoyYTNl>𝖱𝖮𝖮𝖥𝖨𝖵𝖤𝖱𝖲𝖤</a>
+├📕 Lɪʙʀᴀʀy : <a href=https://github.com/pyrogram>Pyʀᴏɢʀᴀᴍ</a>
+├✏️ Lᴀɴɢᴜᴀɢᴇ: <a href=https://www.python.org>Pyᴛʜᴏɴ 3</a>
+├💾 Dᴀᴛᴀ Bᴀꜱᴇ: <a href=https://cloud.mongodb.com>Mᴏɴɢᴏ DB</a>
+├🌀 ᴍʏ ꜱᴇʀᴠᴇʀ : <a href=https://dashboard.heroku.com>Heroku</a>
+╰───────────────⍟ """

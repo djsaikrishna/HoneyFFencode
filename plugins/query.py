@@ -102,7 +102,13 @@ async def Cb_Handle(bot:Client, query:CallbackQuery):
         SnowDev = await query.message.reply_text(text="**Setting Your FFMPEG CODE**\n\nPlease Wait...")
         await db.set_ffmpegcode(query.from_user.id, ffmpeg_code.text)
         await SnowDev.edit("✅️ __**Fғᴍᴘᴇɢ Cᴏᴅᴇ Sᴇᴛ Sᴜᴄᴄᴇssғᴜʟʟʏ**__")
-        
+
+    elif data == 'about':
+        BUTN = [
+            [[InlineKeyboardButton(text='⟸ Bᴀᴄᴋ', callback_data='home')]]
+        ]
+        botuser = await bot.get_me()
+        query.message.edit(Txt.ABOUT_TXT.format(botuser.username), reply_markup=InlineKeyboardMarkup(BUTN))
 
 
     elif data == "close":

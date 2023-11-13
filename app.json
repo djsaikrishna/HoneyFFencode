@@ -15,11 +15,6 @@
             "value": "",
             "required": false
         },
-        "WEBHOOK": {
-            "description": "if your server is need web service! value = True else value = False",
-            "value": "False",
-            "required": false
-        },
         "FORCE_SUB": {
             "description": "Your force sub channel user name without [@] ",
             "value": "",

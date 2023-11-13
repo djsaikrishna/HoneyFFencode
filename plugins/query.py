@@ -108,7 +108,7 @@ async def Cb_Handle(bot:Client, query:CallbackQuery):
             [[InlineKeyboardButton(text='⟸ Bᴀᴄᴋ', callback_data='home')]]
         ]
         botuser = await bot.get_me()
-        query.message.edit(Txt.ABOUT_TXT.format(botuser.username), reply_markup=InlineKeyboardMarkup(BUTN))
+        await query.message.edit(Txt.ABOUT_TXT.format(botuser.username), reply_markup=InlineKeyboardMarkup(BUTN))
 
 
     elif data == "close":

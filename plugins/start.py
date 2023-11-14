@@ -1,10 +1,11 @@
-from time import sleep
 import humanize
-from pyrogram import Client, filters, enums
-from pyrogram.errors import FloodWait
-from pyrogram.types import Message, InlineKeyboardButton, InlineKeyboardMarkup
-from helper.database import db
+from time import sleep
 from script import Txt
+from helper.database import db
+from pyrogram.errors import FloodWait
+from pyrogram import Client, filters, enums
+from .check_user_status import handle_user_status
+from pyrogram.types import Message, InlineKeyboardButton, InlineKeyboardMarkup
 
 @Client.on_message((filters.private | filters.group))
 async def _(bot: Client, cmd: Message):

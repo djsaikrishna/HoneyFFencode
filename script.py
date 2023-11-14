@@ -28,9 +28,9 @@ Send me the correct ffmpeg code for more info.
 Check the <a href=https://unix.stackexchange.com/questions/28803/how-can-i-reduce-a-videos-size-with-ffmpeg#:~:text=ffmpeg%20%2Di%20input.mp4%20%2Dvcodec%20libx265%20%2Dcrf%2028%20output.mp4>𝗗𝗢𝗖</a>.
 
 ☛ <b> How to Send ffmpeg Code ? </b>
-<b>➜</b> ffmpeg -i input.mp4 🔺 <code>  -vcodec libx265 -crf 28  </code> 🔺 output.mp4
+<b>➜</b> ffmpeg -i input.mp4 🔺 <code>  -preset faster -c:v libx265 -s 1280x720 -x265-params 'bframes=8:psy-rd=1:ref=3:aq-mode=3:aq-strength=0.8:deblock=1,1' -metadata 'title=Encoded By Snowball (https://github.com/Snowball-0/Advance-File-Encoder-Bot)' -pix_fmt yuv420p -crf 30 -c:a libopus -b:a 32k -c:s copy -map 0 -ac 2 -ab 32k -vbr 2 -level 3.1 -threads 1  </code> 🔺 output.mp4
 
-⚠️ In above code <code> -vcodec libx265 -crf 28 </code> this code which contains flags and values of that flags
+⚠️ In above code <code> -preset faster -c:v libx265 -s 1280x720 -x265-params 'bframes=8:psy-rd=1:ref=3:aq-mode=3:aq-strength=0.8:deblock=1,1' -metadata 'title=Encoded By Snowball (https://github.com/Snowball-0/Advance-File-Encoder-Bot)' -pix_fmt yuv420p -crf 30 -c:a libopus -b:a 32k -c:s copy -map 0 -ac 2 -ab 32k -vbr 2 -level 3.1 -threads 1 </code> this code which contains flags and values of that flags
 
 📥 FOR HELP CONT. @Snowball_Official
 """

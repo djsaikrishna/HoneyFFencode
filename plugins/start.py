@@ -63,7 +63,7 @@ async def cancel_process(bot:Client, message:Message):
     try:
         shutil.rmtree(f"Downloads/{query.from_user.id}")
         shutil.rmtree(f"Encode/{query.from_user.id}")
-        await SnowDev.edit(text="**Canceled All On Going Processes ✅**")
+        return await SnowDev.edit(text="**Canceled All On Going Processes ✅**")
     except BaseException:
-        await SnowDev.edit(text="**No On Going Process Found ❌**")
+        return await SnowDev.edit(text="**No On Going Process Found ❌**")
     

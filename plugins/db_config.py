@@ -2,6 +2,7 @@ from pyrogram import Client, filters, enums
 from helper.database import db
 from helper.utils import CANT_CONFIG_GROUP_MSG
 from script import Txt
+from asyncio.exceptions import TimeoutError
 
 
 @Client.on_message((filters.group | filters.private) & filters.command('set_caption'))
@@ -95,9 +96,13 @@ async def set_ffmpeg(client, message):
     if message.chat.type == enums.ChatType.SUPERGROUP:
         await CANT_CONFIG_GROUP_MSG(client, message)
         return
-
-    ffmpeg = await client.ask(text=Txt.SEND_FFMPEG_CODE, chat_id=message.chat.id,
-                        user_id=message.from_user.id, filters=filters.text, timeout=30, disable_web_page_preview=True)
+    try:
+        ffmpeg = await client.ask(text=Txt.SEND_FFMPEG_CODE, chat_id=message.chat.id,
+                            user_id=message.from_user.id, filters=filters.text, timeout=30, disable_web_page_preview=True)
+    except TimeoutError:
+        await bot.send_message(message.from_user.id, "Error!!\n\nRequest timed out.\nRestart by using /set_ffmpeg")
+        return
+        
     await db.set_ffmpegcode(message.from_user.id, ffmpeg.text)
     await message.reply_text("✅ __**Fғᴍᴘᴇɢ Cᴏᴅᴇ Sᴀᴠᴇᴅ**__", reply_to_message_id=message.id)
 

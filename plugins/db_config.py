@@ -112,7 +112,7 @@ async def see_ffmpeg(client, message):
     SnowDev = await message.reply_text(text="**Please Wait...**", reply_to_message_id=message.id)
 
     ffmpeg = await db.get_ffmpegcode(message.from_user.id)
-    SnowDev.edit(f"✅ __**Yᴏᴜʀ Cᴜʀʀᴇɴᴛ Fғᴍᴘᴇɢ Cᴏᴅᴇ ɪs :-**__\n\n```{ffmpeg}```")
+    await SnowDev.edit(f"✅ __**Yᴏᴜʀ Cᴜʀʀᴇɴᴛ Fғᴍᴘᴇɢ Cᴏᴅᴇ ɪs :-**__\n\n```{ffmpeg}```")
 
 
 @Client.on_message((filters.group | filters.private) & filters.command(['del_ffmpeg', 'delffmpeg']))
@@ -123,8 +123,5 @@ async def del_ffmpeg(client, message):
         return
 
     SnowDev = await message.reply_text(text="**Please Wait...**", reply_to_message_id=message.id)
-
-    ffmpeg = client.ask(text=Txt.SEND_FFMPEG_CODE, chat_id=message.chat.id,
-                        user_id=message.from_user.id, filters=filters.text, timeout=30)
     await db.set_ffmpegcode(message.from_user.id, ffmpeg.text)
-    SnowDev.edit("❌ __**Fғᴍᴘᴇɢ Cᴏᴅᴇ Dᴇʟᴇᴛᴇᴅ**__")
+    await SnowDev.edit("❌ __**Fғᴍᴘᴇɢ Cᴏᴅᴇ Dᴇʟᴇᴛᴇᴅ**__")

@@ -16,7 +16,7 @@ async def Handle_StartMsg(bot:Client, msg:Message):
 
     Snowdev = await msg.reply_text(text= '**Please Wait...**', reply_to_message_id=msg.id)
 
-    if msg.chat.type == enums.ChatType.SUPERGROUP and not db.is_user_exist(msg.from_user.id):
+    if msg.chat.type == enums.ChatType.SUPERGROUP and not await db.is_user_exist(msg.from_user.id):
         botusername = await bot.get_me()
         btn = [
             [InlineKeyboardButton(text='⚡ BOT PM', url=f'https://t.me/{botusername.username}')],

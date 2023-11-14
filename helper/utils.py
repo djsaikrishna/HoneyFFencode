@@ -176,7 +176,7 @@ async def CompressVideo(bot, query, ffmpegcode, c_thumb):
             ])
         )
         
-        cmd = f"""ffmpeg -i {dl} {ffmpegcode} {Output_Path} -y"""
+        cmd = f"""ffmpeg -i "{dl}" {ffmpegcode} "{Output_Path}" -y"""
 
         process = await asyncio.create_subprocess_shell(
             cmd, stdout=asyncio.subprocess.PIPE, stderr=asyncio.subprocess.PIPE

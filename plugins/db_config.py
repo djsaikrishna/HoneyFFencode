@@ -119,7 +119,7 @@ async def see_ffmpeg(client, message):
     ffmpeg = await db.get_ffmpegcode(message.from_user.id)
     
     if ffmpeg:
-        await SnowDev.edit(f"✅ __**Yᴏᴜʀ Cᴜʀʀᴇɴᴛ Fғᴍᴘᴇɢ Cᴏᴅᴇ ɪs :-**__\n\n```{ffmpeg}```")
+        await SnowDev.edit(f"✅ <b>Yᴏᴜʀ Cᴜʀʀᴇɴᴛ Fғᴍᴘᴇɢ Cᴏᴅᴇ ɪs :-</b>\n\n<code>{ffmpeg}</code>")
     else:
         await SnowDev.edit(f"😔 __**Yᴏᴜ Dᴏɴ'ᴛ Hᴀᴠᴇ Aɴy Fғᴍᴘᴇɢ Cᴏᴅᴇ**__")
 

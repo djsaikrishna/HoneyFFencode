@@ -59,10 +59,11 @@ async def Files_Option(bot:Client, message:Message):
 
 @Client.on_message((filters.private | filters.group) & filters.command('cancel'))
 async def cancel_process(bot:Client, message:Message):
+    SnowDev = await message.reply_text(text='**Please Wait**', reply_to_message_id=message.id)
     try:
         shutil.rmtree(f"Downloads/{query.from_user.id}")
         shutil.rmtree(f"Encode/{query.from_user.id}")
-        await message.reply_text(text="**Canceled All On Going Processes ✅", reply_to_message_id=message.id)
+        await SnowDev.edit(text="**Canceled All On Going Processes ✅**")
     except BaseException:
-        pass
-
+        await SnowDev.edit(text="**No On Going Process Found ❌**")
+    

@@ -191,6 +191,7 @@ async def CompressVideo(bot, query, ffmpegcode, c_thumb):
                 await ms.edit(str(er) + "\n\n**Error**")
                 shutil.rmtree(f"Downloads/{query.from_user.id}")
                 shutil.rmtree(f"Encode/{query.from_user.id}")
+                return
         except BaseException:
             pass
     

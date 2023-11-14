@@ -6,7 +6,9 @@ from pyrogram.types import Message, InlineKeyboardButton, InlineKeyboardMarkup
 from helper.database import db
 from script import Txt
 
-
+@Client.on_message((filters.private | filters.group))
+async def _(bot: Client, cmd: Message):
+    await handle_user_status(bot, cmd)
 
 @Client.on_message((filters.private | filters.group) & filters.command('start'))
 async def Handle_StartMsg(bot:Client, msg:Message):

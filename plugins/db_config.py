@@ -127,5 +127,5 @@ async def del_ffmpeg(client, message):
         return
 
     SnowDev = await message.reply_text(text="**Please Wait...**", reply_to_message_id=message.id)
-    await db.set_ffmpegcode(message.from_user.id, ffmpeg.text)
+    await db.set_ffmpegcode(message.from_user.id, None)
     await SnowDev.edit("❌ __**Fғᴍᴘᴇɢ Cᴏᴅᴇ Dᴇʟᴇᴛᴇᴅ**__")
